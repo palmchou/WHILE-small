@@ -72,9 +72,9 @@ def testC(state):
     Test C
     testee:
         Storage: WhileASTState, WhileASTVar
-        Literal: WhileASTIntLit
-        AExp: WhileASTAExpIntLit, WhileASTAExpVar, WhileASTAExpSum
-        BExp: WhileASTBExpLT, WhileASTBExpEqual, WhileASTBExpNot
+        Literal: WhileASTIntLit, WhileASTBoolLit
+        AExp: WhileASTAExpIntLit, WhileASTAExpVar, WhileASTAExpSubtract
+        BExp: WhileASTBExpLT, WhileASTBExpNot, WhileASTBExpVar
         Comm: WhileASTCommWhile, WhileASTCommIf
 
     Program TestC:
