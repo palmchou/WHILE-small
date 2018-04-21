@@ -139,7 +139,7 @@ if __name__ == '__main__':
     print('Test B2:')
     state_x_10 = WhileASTState({'x': 10})
     print('before:')
-    state_x_0.reveal()
+    state_x_10.reveal()
     testB2_state = testB(state_x_10)
     print('after:')
     testB2_state.reveal()
