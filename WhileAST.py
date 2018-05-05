@@ -61,28 +61,6 @@ class WhileASTTypeLit(object):
         raise NotImplementedError
 
 
-class WhileASTIntLit(WhileASTTypeLit):
-    desc = 'Integer Literals'
-    _val = 0
-
-    def __init__(self, val=0):
-        self._val = val
-
-    def value(self):
-        return self._val
-
-
-class WhileASTBoolLit(WhileASTTypeLit):
-    desc = 'Boolean Literals'
-    _val = False
-
-    def __init__(self, val=False):
-        self._val = val
-
-    def value(self):
-        return self._val
-
-
 class WhileASTExp(object):
     desc = 'Abstract Class for WHILE AST Expression'
 
