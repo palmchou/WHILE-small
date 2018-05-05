@@ -1,0 +1,420 @@
+---- SMALL Program_A ----
+Step 0:
+x := 3;
+if (x < 5)
+	x := x + 1
+else
+	x := x - 1
+State: {}
+
+Step 1:
+SKIP;
+if (x < 5)
+	x := x + 1
+else
+	x := x - 1
+State: {x: 3}
+
+Step 2:
+if (x < 5)
+	x := x + 1
+else
+	x := x - 1
+State: {x: 3}
+
+Step 3:
+x := x + 1
+State: {x: 3}
+
+Step 4:
+SKIP
+State: {x: 4}
+Program terminated.
+-------------------------
+
+---- SMALL Program_B ----
+Step 0:
+x := 3;
+y := 5;
+x := 6;
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {}
+
+Step 1:
+SKIP;
+y := 5;
+x := 6;
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {x: 3}
+
+Step 2:
+y := 5;
+x := 6;
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {x: 3}
+
+Step 3:
+SKIP;
+x := 6;
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {x: 3, y: 5}
+
+Step 4:
+x := 6;
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {x: 3, y: 5}
+
+Step 5:
+SKIP;
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {x: 6, y: 5}
+
+Step 6:
+if (x == y && true)
+	x := x - y
+else
+	x := y + 100;
+	y := y * 2
+State: {x: 6, y: 5}
+
+Step 7:
+x := y + 100;
+y := y * 2
+State: {x: 6, y: 5}
+
+Step 8:
+SKIP;
+y := y * 2
+State: {x: 105, y: 5}
+
+Step 9:
+y := y * 2
+State: {x: 105, y: 5}
+
+Step 10:
+SKIP
+State: {x: 105, y: 10}
+Program terminated.
+-------------------------
+
+---- SMALL Program_C 1 ----
+Step 0:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 0}
+
+Step 1:
+x := x + 1;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 0}
+
+Step 2:
+SKIP;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 1}
+
+Step 3:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 1}
+
+Step 4:
+x := x + 1;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 1}
+
+Step 5:
+SKIP;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 2}
+
+Step 6:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 2}
+
+Step 7:
+x := x + 1;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 2}
+
+Step 8:
+SKIP;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 3}
+
+Step 9:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 3}
+
+Step 10:
+x := x + 1;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 3}
+
+Step 11:
+SKIP;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 4}
+
+Step 12:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 4}
+
+Step 13:
+x := x + 1;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 4}
+
+Step 14:
+SKIP;
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 5}
+
+Step 15:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 5}
+
+Step 16:
+SKIP;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 5}
+
+Step 17:
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 5}
+
+Step 18:
+SKIP
+State: {x: 5}
+Program terminated.
+-------------------------
+
+---- SMALL Program_C 2 ----
+Step 0:
+while (x < 5)
+	x := x + 1;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 10}
+
+Step 1:
+SKIP;
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 10}
+
+Step 2:
+if (!x == 5)
+	x := -1
+else
+	SKIP
+State: {x: 10}
+
+Step 3:
+x := -1
+State: {x: 10}
+
+Step 4:
+SKIP
+State: {x: -1}
+Program terminated.
+-------------------------
+
+---- SMALL Program_D 1 ----
+Step 0:
+if (x < 0)
+	pos := false
+else
+	pos := true;
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: 10}
+
+Step 1:
+pos := true;
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: 10}
+
+Step 2:
+SKIP;
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: 10, pos: True}
+
+Step 3:
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: 10, pos: True}
+
+Step 4:
+SKIP
+State: {x: 10, pos: True}
+Program terminated.
+-------------------------
+
+---- SMALL Program_D 2 ----
+Step 0:
+if (x < 0)
+	pos := false
+else
+	pos := true;
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: -10}
+
+Step 1:
+pos := false;
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: -10}
+
+Step 2:
+SKIP;
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: -10, pos: False}
+
+Step 3:
+if (!pos)
+	x := 0 - x
+else
+	SKIP
+State: {x: -10, pos: False}
+
+Step 4:
+x := 0 - x
+State: {x: -10, pos: False}
+
+Step 5:
+SKIP
+State: {x: 10, pos: False}
+Program terminated.
+-------------------------
+

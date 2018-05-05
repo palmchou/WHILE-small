@@ -1,0 +1,577 @@
+---- SMALL Program_E ----
+Step 0:
+while (true)
+	x := x + 1
+State: {x: 0}
+
+Step 1:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 0}
+
+Step 2:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 1}
+
+Step 3:
+while (true)
+	x := x + 1
+State: {x: 1}
+
+Step 4:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 1}
+
+Step 5:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 2}
+
+Step 6:
+while (true)
+	x := x + 1
+State: {x: 2}
+
+Step 7:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 2}
+
+Step 8:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 3}
+
+Step 9:
+while (true)
+	x := x + 1
+State: {x: 3}
+
+Step 10:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 3}
+
+Step 11:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 4}
+
+Step 12:
+while (true)
+	x := x + 1
+State: {x: 4}
+
+Step 13:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 4}
+
+Step 14:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 5}
+
+Step 15:
+while (true)
+	x := x + 1
+State: {x: 5}
+
+Step 16:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 5}
+
+Step 17:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 6}
+
+Step 18:
+while (true)
+	x := x + 1
+State: {x: 6}
+
+Step 19:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 6}
+
+Step 20:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 7}
+
+Step 21:
+while (true)
+	x := x + 1
+State: {x: 7}
+
+Step 22:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 7}
+
+Step 23:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 8}
+
+Step 24:
+while (true)
+	x := x + 1
+State: {x: 8}
+
+Step 25:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 8}
+
+Step 26:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 9}
+
+Step 27:
+while (true)
+	x := x + 1
+State: {x: 9}
+
+Step 28:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 9}
+
+Step 29:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 10}
+
+Step 30:
+while (true)
+	x := x + 1
+State: {x: 10}
+
+Step 31:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 10}
+
+Step 32:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 11}
+
+Step 33:
+while (true)
+	x := x + 1
+State: {x: 11}
+
+Step 34:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 11}
+
+Step 35:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 12}
+
+Step 36:
+while (true)
+	x := x + 1
+State: {x: 12}
+
+Step 37:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 12}
+
+Step 38:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 13}
+
+Step 39:
+while (true)
+	x := x + 1
+State: {x: 13}
+
+Step 40:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 13}
+
+Step 41:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 14}
+
+Step 42:
+while (true)
+	x := x + 1
+State: {x: 14}
+
+Step 43:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 14}
+
+Step 44:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 15}
+
+Step 45:
+while (true)
+	x := x + 1
+State: {x: 15}
+
+Step 46:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 15}
+
+Step 47:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 16}
+
+Step 48:
+while (true)
+	x := x + 1
+State: {x: 16}
+
+Step 49:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 16}
+
+Step 50:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 17}
+
+Step 51:
+while (true)
+	x := x + 1
+State: {x: 17}
+
+Step 52:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 17}
+
+Step 53:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 18}
+
+Step 54:
+while (true)
+	x := x + 1
+State: {x: 18}
+
+Step 55:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 18}
+
+Step 56:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 19}
+
+Step 57:
+while (true)
+	x := x + 1
+State: {x: 19}
+
+Step 58:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 19}
+
+Step 59:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 20}
+
+Step 60:
+while (true)
+	x := x + 1
+State: {x: 20}
+
+Step 61:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 20}
+
+Step 62:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 21}
+
+Step 63:
+while (true)
+	x := x + 1
+State: {x: 21}
+
+Step 64:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 21}
+
+Step 65:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 22}
+
+Step 66:
+while (true)
+	x := x + 1
+State: {x: 22}
+
+Step 67:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 22}
+
+Step 68:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 23}
+
+Step 69:
+while (true)
+	x := x + 1
+State: {x: 23}
+
+Step 70:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 23}
+
+Step 71:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 24}
+
+Step 72:
+while (true)
+	x := x + 1
+State: {x: 24}
+
+Step 73:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 24}
+
+Step 74:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 25}
+
+Step 75:
+while (true)
+	x := x + 1
+State: {x: 25}
+
+Step 76:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 25}
+
+Step 77:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 26}
+
+Step 78:
+while (true)
+	x := x + 1
+State: {x: 26}
+
+Step 79:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 26}
+
+Step 80:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 27}
+
+Step 81:
+while (true)
+	x := x + 1
+State: {x: 27}
+
+Step 82:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 27}
+
+Step 83:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 28}
+
+Step 84:
+while (true)
+	x := x + 1
+State: {x: 28}
+
+Step 85:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 28}
+
+Step 86:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 29}
+
+Step 87:
+while (true)
+	x := x + 1
+State: {x: 29}
+
+Step 88:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 29}
+
+Step 89:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 30}
+
+Step 90:
+while (true)
+	x := x + 1
+State: {x: 30}
+
+Step 91:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 30}
+
+Step 92:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 31}
+
+Step 93:
+while (true)
+	x := x + 1
+State: {x: 31}
+
+Step 94:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 31}
+
+Step 95:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 32}
+
+Step 96:
+while (true)
+	x := x + 1
+State: {x: 32}
+
+Step 97:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 32}
+
+Step 98:
+SKIP;
+while (true)
+	x := x + 1
+State: {x: 33}
+
+Step 99:
+while (true)
+	x := x + 1
+State: {x: 33}
+
+Step 100:
+x := x + 1;
+while (true)
+	x := x + 1
+State: {x: 33}
+
+Stop running after 100 steps.
+Program seems like diverging.
+-------------------------
+

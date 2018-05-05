@@ -1,5 +1,10 @@
 # coding=utf-8
 import enum
+from typing import Tuple
+
+
+def indent(s):
+    return '\t' + str(s).replace('\n', '\n\t')
 
 
 class WhileASTVar(object):
@@ -53,6 +58,10 @@ class WhileASTState(object):
         for var_id, var in self.state_dict.items():
             print("var_id: %2s, type: %4s, value: %4s" % (var_id, var.type(), str(var.eval())))
 
+    def __str__(self):
+
+        return '{%s}' % (', '.join(('%s: %s' % (var_id, str(var.eval())) for var_id, var in self.state_dict.items())))
+
 
 class WhileASTTypeLit(object):
     desc = 'Abstract Class for integer and boolean type'
@@ -65,6 +74,9 @@ class WhileASTExp(object):
     desc = 'Abstract Class for WHILE AST Expression'
 
     def eval(self, state):
+        raise NotImplementedError
+
+    def __str__(self):
         raise NotImplementedError
 
 
@@ -83,6 +95,9 @@ class WhileASTAExp(WhileASTExp):
     def eval(self, state):
         raise NotImplementedError
 
+    def __str__(self):
+        raise NotImplementedError
+
 
 class WhileASTAExpIntLit(WhileASTAExp):
     desc = 'Aexp for integer literal'
@@ -93,6 +108,9 @@ class WhileASTAExpIntLit(WhileASTAExp):
 
     def eval(self, state):
         return self.int_value, state
+
+    def __str__(self):
+        return str(self.int_value)
 
 
 class WhileASTAExpVar(WhileASTAExp):
@@ -109,6 +127,9 @@ class WhileASTAExpVar(WhileASTAExp):
         :return:
         """
         return state.eval_var(self.var_id), state
+
+    def __str__(self):
+        return self.var_id
 
 
 class WhileASTAExpSum(WhileASTAExp):
@@ -128,6 +149,9 @@ class WhileASTAExpSum(WhileASTAExp):
         """
         return self.exp1.eval(state)[0] + self.exp2.eval(state)[0], state
 
+    def __str__(self):
+        return '%s + %s' % (self.exp1, self.exp2)
+
 
 class WhileASTAExpSubtract(WhileASTAExp):
     desc = 'Aexp for subtract'
@@ -145,6 +169,9 @@ class WhileASTAExpSubtract(WhileASTAExp):
         :return:
         """
         return self.exp1.eval(state)[0] - self.exp2.eval(state)[0], state
+
+    def __str__(self):
+        return '%s - %s' % (self.exp1, self.exp2)
 
 
 class WhileASTAExpProduct(WhileASTAExp):
@@ -164,6 +191,9 @@ class WhileASTAExpProduct(WhileASTAExp):
         """
         return self.exp1.eval(state)[0] * self.exp2.eval(state)[0], state
 
+    def __str__(self):
+        return '%s * %s' % (self.exp1, self.exp2)
+
 
 class WhileASTBExp(WhileASTExp):
     class BExpType(enum.Enum):
@@ -182,6 +212,9 @@ class WhileASTBExp(WhileASTExp):
     def eval(self, state):
         raise NotImplementedError
 
+    def __str__(self):
+        raise NotImplementedError
+
 
 class WhileASTBExpVar(WhileASTBExp):
     desc = 'Bexp for bool variable'
@@ -198,6 +231,9 @@ class WhileASTBExpVar(WhileASTBExp):
         """
         return state.eval_var(self.var_id), state
 
+    def __str__(self):
+        return self.var_id
+
 
 class WhileASTBExpBoolLit(WhileASTBExp):
     desc = 'Bexp for boolean literal'
@@ -209,21 +245,8 @@ class WhileASTBExpBoolLit(WhileASTBExp):
     def eval(self, state):
         return self.bool_value, state
 
-
-# class WhileASTAExpVar(WhileASTAExp):
-#     desc = 'Aexp for integer literal'
-#     exp_type = WhileASTAExp.AExpType.IntLit
-#     var_id = None
-#
-#     def __init__(self, var_id):
-#         self.var_id = var_id
-#
-#     def eval(self, state):
-#         """
-#         :param state: WhileASTState
-#         :return:
-#         """
-#         return state.eval_var(self.var_id), state
+    def __str__(self):
+        return 'true' if self.bool_value else 'false'
 
 
 class WhileASTBExpEqual(WhileASTBExp):
@@ -243,6 +266,9 @@ class WhileASTBExpEqual(WhileASTBExp):
         """
         return self.exp1.eval(state)[0] == self.exp2.eval(state)[0], state
 
+    def __str__(self):
+        return '%s == %s' % (self.exp1, self.exp2)
+
 
 class WhileASTBExpLT(WhileASTBExp):
     desc = 'Bexp for less than'
@@ -261,6 +287,9 @@ class WhileASTBExpLT(WhileASTBExp):
         """
         return self.exp1.eval(state)[0] < self.exp2.eval(state)[0], state
 
+    def __str__(self):
+        return '%s < %s' % (self.exp1, self.exp2)
+
 
 class WhileASTBExpNot(WhileASTBExp):
     desc = 'Bexp for logical not'
@@ -276,6 +305,9 @@ class WhileASTBExpNot(WhileASTBExp):
         :return:
         """
         return not self.exp.eval(state)[0], state
+
+    def __str__(self):
+        return '!%s' % self.exp
 
 
 class WhileASTBExpOr(WhileASTBExp):
@@ -295,6 +327,9 @@ class WhileASTBExpOr(WhileASTBExp):
         """
         return self.exp1.eval(state)[0] or self.exp2.eval(state)[0], state
 
+    def __str__(self):
+        return '%s || %s' % (self.exp1, self.exp2)
+
 
 class WhileASTBExpAnd(WhileASTBExp):
     desc = 'Bexp for logical and'
@@ -313,6 +348,9 @@ class WhileASTBExpAnd(WhileASTBExp):
         """
         return self.exp1.eval(state)[0] and self.exp2.eval(state)[0], state
 
+    def __str__(self):
+        return '%s && %s' % (self.exp1, self.exp2)
+
 
 class WhileASTComm(object):
     class CommType(enum.Enum):
@@ -325,7 +363,13 @@ class WhileASTComm(object):
 
     comm_type = CommType.NotImplemented
 
-    def exec(self, state):
+    def exec(self, state: WhileASTState) -> WhileASTState:
+        raise NotImplementedError
+
+    def exec_small(self, state: WhileASTState):
+        raise NotImplementedError
+
+    def __str__(self):
         raise NotImplementedError
 
 
@@ -334,6 +378,12 @@ class WhileASTCommSkip(WhileASTComm):
 
     def exec(self, state):
         return state
+
+    def exec_small(self, state: WhileASTState) -> Tuple[WhileASTComm, WhileASTState]:
+        raise NotImplementedError("Should never execute skip command in small step.")
+
+    def __str__(self):
+        return 'SKIP'
 
 
 class WhileASTCommAssign(WhileASTComm):
@@ -350,19 +400,35 @@ class WhileASTCommAssign(WhileASTComm):
         state.assign_var(self.var_id, value)
         return state
 
+    def exec_small(self, state: WhileASTState) -> Tuple[WhileASTComm, WhileASTState]:
+        return WhileASTCommSkip(), self.exec(state)
+
+    def __str__(self):
+        return '%s := %s' % (self.var_id, self.exp)
+
 
 class WhileASTCommSeq(WhileASTComm):
     comm_type = WhileASTComm.CommType.Sequence
-    comm_A = None
-    comm_B = None
+    comm_A: WhileASTComm = None
+    comm_B: WhileASTComm = None
 
-    def __init__(self, comm_a, comm_b):
+    def __init__(self, comm_a: WhileASTComm, comm_b: WhileASTComm):
         self.comm_A = comm_a
         self.comm_B = comm_b
 
     def exec(self, state):
         state_prime = self.comm_A.exec(state)
         return self.comm_B.exec(state_prime)
+
+    def exec_small(self, state: WhileASTState) -> Tuple[WhileASTComm, WhileASTState]:
+        if not self.comm_A.comm_type == WhileASTComm.CommType.Skip:  # seq-rule 1
+            comm_A_prime, state_prime =  self.comm_A.exec_small(state)
+            return WhileASTCommSeq(comm_A_prime, self.comm_B), state_prime
+        else:  # seq-rule 2
+            return self.comm_B, state
+
+    def __str__(self):
+        return '%s;\n%s' % (self.comm_A, self.comm_B)
 
 
 # if b then c1 else c2 for c1,c2 ∈ Comm and b∈Bexp
@@ -382,6 +448,18 @@ class WhileASTCommIf(WhileASTComm):
         else:
             return self.comm_2.exec(state)
 
+    def exec_small(self, state: WhileASTState) -> Tuple[WhileASTComm, WhileASTState]:
+        if self.bool_b.eval(state)[0]:  # if-true rule
+            return self.comm_1, state
+        else:  # if-false rule
+            return self.comm_2, state
+
+    # def __str__(self):
+    #     return 'if (%s) %s else %s' % (self.bool_b, self.comm_1, self.comm_2)
+
+    def __str__(self):
+        return 'if (%s)\n%s\nelse\n%s' % (self.bool_b, indent(self.comm_1), indent(self.comm_2))
+
 
 # while b do c for c ∈ Comm and b ∈ Bexp
 class WhileASTCommWhile(WhileASTComm):
@@ -389,7 +467,7 @@ class WhileASTCommWhile(WhileASTComm):
     bool_b = None
     body_comm = None
 
-    def __init__(self, b, comm):
+    def __init__(self, b: WhileASTBExp, comm: WhileASTComm):
         self.bool_b = b
         self.body_comm = comm
 
@@ -400,3 +478,16 @@ class WhileASTCommWhile(WhileASTComm):
             return self.exec(next_s)
         else:
             return state
+
+    def exec_small(self, state: WhileASTState) -> Tuple[WhileASTComm, WhileASTState]:
+        condition = self.bool_b.eval(state)[0]
+        if not condition:  # while-false rule
+            return WhileASTCommSkip(), state
+        else:  # while-true rule
+            return WhileASTCommSeq(self.body_comm, self), state
+
+    # def __str__(self):
+    #     return 'while (%s) %s' % (self.bool_b, self.body_comm)
+
+    def __str__(self):
+        return 'while (%s)\n%s' % (self.bool_b, indent(self.body_comm))
