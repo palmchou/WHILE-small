@@ -12,10 +12,13 @@ Previous homeworks and implementation language
 3. WHILE small step interpreter: Python 3
 
 ### Environment
-Should work on any `Python3` environment.
-Developed and tested on `Python 3.6 on macOS 10.12.6`.
+Since type annotation feature was used in this project, at least **Python 3.6** is needed to run this project.
+
+Developed and tested on `Python 3.6.0 on macOS 10.12.6`.
 
 ### Tests
+Output of sample program run can be found at `sample_run[_divergence].txt`
+
 Program A:
 
     x := 3;
